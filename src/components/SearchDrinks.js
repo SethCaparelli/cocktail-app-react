@@ -17,7 +17,7 @@ class SearchDrinks extends Component {
 
     render() {
         return (
-            <div id="search-form">
+            <div id="search-form" className="box-header">
                 <form ref={(input) => {this.drinkForm = input}} onSubmit={(e) => {this.createDrinkName(e)}}>
                     <label htmlFor="drink-by-name">Search By Name</label><br/>
                     <input ref={(input) => {this.drinkByName = input}} type="text"/><br/>

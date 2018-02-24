@@ -1,16 +1,51 @@
-/*!
- * Bootswatch v4.0.0
- * Homepage: https://bootswatch.com
- * Copyright 2012-2018 Thomas Park
- * Licensed under MIT
- * Based on Bootstrap
+ /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
 */
-/*!
- * Bootstrap v4.0.0 (https://getbootstrap.com)
- * Copyright 2011-2018 The Bootstrap Authors
- * Copyright 2011-2018 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+
+html, body, div, span, applet, object, iframe,blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
  @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
  :root {
    --blue: #2780E3;
@@ -40,7 +75,7 @@
    --breakpoint-lg: 992px;
    --breakpoint-xl: 1200px;
    --font-family-sans-serif: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+   --font-family-monospace: SFMono-Regar, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
  }
 
 
@@ -64,30 +99,6 @@
    background-color: #fff;
  }
 
- h1, h2, h3, h4, h5, h6 {
-   margin-top: 0;
-   margin-bottom: 0.5rem;
- }
-
- p {
-   margin-top: 0;
-   margin-bottom: 1rem;
- }
-
- ol,
- ul,
- dl {
-   margin-top: 0;
-   margin-bottom: 1rem;
- }
-
- ol ol,
- ul ul,
- ol ul,
- ul ol {
-   margin-bottom: 0;
- }
-
  b,
  strong {
    font-weight: bolder;
@@ -97,20 +108,24 @@
    font-size: 80%;
  }
 
- img {
-   vertical-align: middle;
-   border-style: none;
- }
-
  button, .submit {
     border-radius: 10px;
-
  }
+
+ #splash button {
+  width: 150px;
+  height: 75px;
+}
 
  button:hover, .submit:hover {
    background-color:  #373a3c;
-   color: white
+   color: white;
+   outline: none;
  }
+
+ button:focus, input:focus {
+   outline:0;
+  }
 
  input,
  select,
@@ -124,9 +139,9 @@
 
  h1, h2, h3, h4, h5, h6,
  .h1, .h2, .h3, .h4, .h5, .h6 {
-   margin-bottom: 0.5rem;
    font-family: inherit;
-   font-weight: 300;
+   margin-bottom: 0.5%;
+   font-weight: 375;
    line-height: 1.2;
    color: inherit;
  }
@@ -145,6 +160,7 @@
 
  h4, .h4 {
    font-size: 1.40625rem;
+   margin-top: 5%;
  }
 
  h5, .h5 {
@@ -155,98 +171,104 @@
    font-size: 0.9375rem;
  }
 
- body {
-   -webkit-font-smoothing: antialiased;
+ p {
+   margin: 0;
  }
 
-#main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+ .splash-logo {
+   height: 60%;
+   width: 60%;
+ }
 
+ #body {
+   display: grid;
+   grid-template-rows: 1fr 5fr 1fr;
+ }
+
+ header {
+   grid-row: 1/2;
+ }
+
+ #main {
+   grid-row: 2/3;
+ }
+
+/* footer {
+  grid-row: 3/4;
+} */
+
+#main {
+  display: grid;
+  grid-template-columns: 1fr 1fr
 }
 
-.drink img {
-  height: 300px;
-  width: 300px;
+#drink-box {
+  grid-column: 1/2;
+}
+
+#recipe-box {
+  grid-column: 2/3;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  grid-column: 1/5;
+  grid-row: 1/2;
 }
 
 #search-form {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 100%;
+  padding-bottom: 6px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#drink-list, #recipe-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+  height: 400px;
+  width: 400px;
 }
 
 .drink {
   display: flex;
   flex-direction: column;
-  margin: 5%;
+  margin-right: 5%;
 }
 
-.drink-list {
+.drink-img {
   display: flex;
-  flex-direction: row;
-  height: 400px;
-  width: 400px;
-  overflow-y: scroll;
-  position: relative;
-
+  width: 270px;
 }
 
-form {
-  margin: 20px;
-}
-
-.recipe {
+#drink-list {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 500px;
-  height: 500px;
-  position: top;
-}
-
-footer {
-  margin-top: 100px;
-  width: 100%;
-  height: 30px;
-  position: fixed;
-}
-
-.recipe-header {
-  margin-top: 35px;
-  margin-bottom: 57px;
-}
-
-#cocktail-logo {
-  width: 300px;
-  height: 300px;
-}
-
-#recipe-splash {
-  width: 400px;
-  height: 400px;
-}
-
-header {
-  display: flex;
-  margin: 40px 20px;
-}
-
-#splash {
-  display: flex;
-  height: 600px;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-around;
-  margin-top: 50px;
 }
 
-#splash p {
-  width: 50%;
+#recipe {
+  display: flex;
+  flex-direction: column;
 }
 
-#splash button {
-  width: 100px;
-  height: 50px;
+#ingredients-list {
+  list-style-type: disc;
+  margin-left: 10%;
 }
