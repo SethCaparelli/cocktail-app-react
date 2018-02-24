@@ -16,7 +16,7 @@ class Drink extends Component {
             <div className="drink">
                 <h3>{this.props.details.strDrink}=></h3>
                 <img className="drink-img" src={"http://" + this.props.details.strDrinkThumb} alt="drink-pic"/>
-                <button onClick={(e) => {this.createName(e)}}>Get Recipe</button>
+                <button id="get-recipe-button" onClick={(e) => {this.createName(e)}}>Get Recipe</button>
             </div>
         )
     }

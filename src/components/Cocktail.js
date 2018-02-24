@@ -21,6 +21,7 @@ class Cocktail extends Component {
       activateRecipe: false,
       activateDrinkError: false,
       activateRecipeError: false,
+      drinkListExpand: false
     }
   }
 
@@ -41,16 +42,31 @@ class Cocktail extends Component {
           activateDrinkError: true,
           activateDrink: true,
           activateRecipe: false,
-          activateRecipeError: false
+          activateRecipeError: false,
+          drinkListExpand: false
         })
-      } else {
+      }
+      else if(drinks.drinks.length > 1) {
+        console.log(drinks.drinks.length)
+        this.setState({
+          drinks,
+          ibaRecipe: [],
+          activateRecipe: false,
+          activateDrink: false,
+          activateDrinkError: false,
+          activateRecipeError: false,
+          drinkListExpand: true
+        })
+      }
+      else {
           this.setState({
           drinks,
           ibaRecipe: [],
           activateRecipe: false,
           activateDrink: false,
           activateDrinkError: false,
-          activateRecipeError: false
+          activateRecipeError: false,
+          drinkListExpand: false
         })
       }
     })
@@ -70,7 +86,20 @@ class Cocktail extends Component {
           this.setState({
             drinks: [],
             activateDrinkError: true,
-            activateDrink: true
+            activateDrink: true,
+            drinkListExpand: false
+          })
+        }
+        if(drinks.drinks.length > 1) {
+          console.log(drinks.drinks.length)
+          this.setState({
+            drinks,
+            ibaRecipe: [],
+            activateDrink: false,
+            activateRecipe: false,
+            activateDrinkError: false,
+            activateRecipeError: false,
+            drinkListExpand: true
           })
         }
         else {
@@ -80,10 +109,12 @@ class Cocktail extends Component {
             activateDrink: false,
             activateRecipe: false,
             activateDrinkError: false,
-            activateRecipeError: false
+            activateRecipeError: false,
+            drinkListExpand: false,
           })
         }
       })
+
       .catch(error => console.log(error))
   }
 
@@ -125,7 +156,8 @@ class Cocktail extends Component {
         activateDrink: false,
         activateRecipe: false,
         activateDrinkError: false,
-        activateRecipeError: false
+        activateRecipeError: false,
+        drinkListExpand: false
       })
     })
     .catch(error => console.log(error))
@@ -135,14 +167,14 @@ class Cocktail extends Component {
     const drinkList = this.state.drinks.drinks
     return (
       <main id="body">
-        <div>
+        <div id="main-header">
           <Header />
         </div>
         <div id="main">
           <section className="box" id="drink-box">
             <SearchDrinks getRandomDrink={this.getRandomDrink} getDrinksByIngredient={this.getDrinksByIngredient} getDrinksByName={this.getDrinksByName} />
             {this.state.activateDrinkError === false ? <h5>=</h5> : <h5 className="not-valid">Not A Valid Input</h5>}
-            <div id="drink-list">
+            <div id={this.state.drinkListExpand === false ? "drink-list" : "drink-list-expand"}>
               {this.state.activateDrink ? <img className="splash-logo" id="camera-logo"  src="/assets/camera-logo.png" alt="camera-logo" /> : drinkList.map(drink => <Drink  getRecipe={this.getRecipe} key={drink.idDrink} details={drink} /> )}
             </div>
           </section>

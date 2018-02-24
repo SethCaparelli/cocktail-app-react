@@ -15,6 +15,9 @@ class Recipe extends Component {
                         if(ingredient.special) {
                             return <li key={i}>{ingredient.special}</li>
                         }
+                        else if (ingredient.unit === "cl") {
+                            return <li key={i}>{(ingredient.amount * 0.33814).toFixed(2)} oz of {ingredient.ingredient}</li>
+                        }
                         else {
                             return <li key={i}>{ingredient.amount} {ingredient.unit} of {ingredient.ingredient}</li>
                         }

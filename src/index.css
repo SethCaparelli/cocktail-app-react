@@ -110,11 +110,16 @@ table {
 
  button, .submit {
     border-radius: 10px;
+    height: 30px;
  }
 
  #splash button {
   width: 150px;
   height: 75px;
+}
+
+#get-recipe-button {
+  height: 30px;
 }
 
  button:hover, .submit:hover {
@@ -175,31 +180,45 @@ table {
    margin: 0;
  }
 
+ #splash-body {
+   display: grid;
+   grid-template-rows: 1fr 5fr 1fr;
+ }
+
+ #splash-header {
+   display: flex;
+   justify-content: center;
+ }
+
+ #splash {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ #splash p {
+   margin: 3% 5%;
+ }
+
  .splash-logo {
    height: 60%;
    width: 60%;
  }
 
+ #cocktail-logo {
+  height: 30%;
+  width: 30%;
+ }
+
  #body {
    display: grid;
-   grid-template-rows: 1fr 5fr 1fr;
+   grid-template-rows: 1fr 8fr 1fr;
  }
-
- header {
-   grid-row: 1/2;
- }
-
- #main {
-   grid-row: 2/3;
- }
-
-/* footer {
-  grid-row: 3/4;
-} */
 
 #main {
-  display: grid;
-  grid-template-columns: 1fr 1fr
+  display: flex;
+  flex-wrap: wrap;
+  grid-row: 2/3;
 }
 
 #drink-box {
@@ -212,9 +231,10 @@ table {
 
 .box {
   display: flex;
+  flex: 1 0 20%;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .box-header {
@@ -229,7 +249,6 @@ table {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  padding-bottom: 6px;
 }
 
 footer {
@@ -240,11 +259,13 @@ footer {
 
 #drink-list, #recipe-list {
   display: flex;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
   justify-content: center;
   align-items: center;
   overflow: scroll;
-  height: 400px;
-  width: 400px;
+  height: 475px;
+  width: 474px;
 }
 
 .drink {
@@ -258,9 +279,15 @@ footer {
   width: 270px;
 }
 
-#drink-list {
+ #drink-list-expand {
   display: flex;
-  justify-content: space-around;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: scroll;
+  height: 475px;
+  width: 474px;
 }
 
 #recipe {
@@ -271,4 +298,8 @@ footer {
 #ingredients-list {
   list-style-type: disc;
   margin-left: 10%;
+}
+
+#main-header {
+  margin-left: 3%;
 }
