@@ -18,18 +18,18 @@ class SearchDrinks extends Component {
     render() {
         return (
             <div id="search-form" className="box-header">
-                <form ref={(input) => {this.drinkForm = input}} onSubmit={(e) => {this.createDrinkName(e)}}>
+                <form id="name-form" ref={(input) => {this.drinkForm = input}} onSubmit={(e) => {this.createDrinkName(e)}}>
                     <label htmlFor="drink-by-name">Search By Name</label><br/>
-                    <input ref={(input) => {this.drinkByName = input}} type="text"/><br/>
+                    <input id="by-name" ref={(input) => {this.drinkByName = input}} type="text"/><br/>
                     <input className="submit" type="submit" value="Submit"/>
                 </form>
-                <form onSubmit={(e) => {this.createDrinkName2(e)}} ref={(input) => {this.drinkForm2 = input}} >
+                <form id="ingredients-form" onSubmit={(e) => {this.createDrinkName2(e)}} ref={(input) => {this.drinkForm2 = input}} >
                     <label htmlFor="drink-by-ingredient">Search By Ingredient</label><br/>
-                    <input ref={(input) => {this.drinkByIngredient = input}} type="text"/><br/>
+                    <input id="by-ingredient" ref={(input) => {this.drinkByIngredient = input}} type="text"/><br/>
                     <input className="submit" type="submit" value="Submit"/>
                 </form>
-                <form onSubmit={(e) => {this.props.getRandomDrink(e)}}><br/>
-                    <input className="submit" type="submit" value="Random Drink" />
+                <form id="random-form" onSubmit={(e) => {this.props.getRandomDrink(e)}}><br/>
+                    <input id="" className="submit" type="submit" value="Random Drink" />
                 </form>
             </div>
         )

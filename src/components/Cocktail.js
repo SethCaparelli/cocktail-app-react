@@ -26,7 +26,7 @@ class Cocktail extends Component {
   }
 
   getDrinksByIngredient(drinkByIngredient) {
-    fetch(`http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${drinkByIngredient}`)
+    fetch(`https://cors-anywhere.herokuapp.com/http://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${drinkByIngredient}`)
     .then(response => {
       if(response.headers.get("Content-Type") === "application/json") {
         return response.json()
@@ -73,7 +73,7 @@ class Cocktail extends Component {
   }
 
   getDrinksByName(drinkByName) {
-      fetch(`http://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkByName}`)
+      fetch(`https://cors-anywhere.herokuapp.com/http://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkByName}`)
       .then(response => {
         if(response.headers.get("Content-Type") === "application/json") {
           return response.json()
@@ -119,6 +119,7 @@ class Cocktail extends Component {
   }
 
   getRecipe(drinkName) {
+    console.log("doing something")
     fetch("/iba.json")
     .then(response => {
       return response.json()
@@ -129,7 +130,8 @@ class Cocktail extends Component {
       })
       if(matchedRecipe.length === 0) {
         this.setState({
-          activateRecipeError: true
+          activateRecipeError: true,
+          activateRecipe: false
         })
       }
       else if(matchedRecipe[0].name === drinkName) {
@@ -145,7 +147,7 @@ class Cocktail extends Component {
 
   getRandomDrink(event) {
     event.preventDefault()
-    fetch("http://www.thecocktaildb.com/api/json/v1/1/random.php")
+    fetch("https://cors-anywhere.herokuapp.com/http://www.thecocktaildb.com/api/json/v1/1/random.php")
     .then(response => {
       return response.json()
     })
@@ -173,19 +175,19 @@ class Cocktail extends Component {
         <div id="main">
           <section className="box" id="drink-box">
             <SearchDrinks getRandomDrink={this.getRandomDrink} getDrinksByIngredient={this.getDrinksByIngredient} getDrinksByName={this.getDrinksByName} />
-            {this.state.activateDrinkError === false ? <h5>=</h5> : <h5 className="not-valid">Not A Valid Input</h5>}
+            {this.state.activateDrinkError === false ? <h5>=</h5> : <h5 id="drink-unavailable" className="not-valid">Not A Valid Input</h5>}
             <div id={this.state.drinkListExpand === false ? "drink-list" : "drink-list-expand"}>
               {this.state.activateDrink ? <img className="splash-logo" id="camera-logo"  src="/assets/camera-logo.png" alt="camera-logo" /> : drinkList.map(drink => <Drink  getRecipe={this.getRecipe} key={drink.idDrink} details={drink} /> )}
             </div>
           </section>
           <section className="box" id="recipe-box">
             <div className="box-header">
-              <h2>IBA Recipe</h2>
+              <h2>Recipe</h2>
             </div>
-              {this.state.activateRecipeError ? <h5 className="not-valid">Recipe Unavailable</h5> : <h5>=</h5>}
+              {this.state.activateRecipeError ? <h5 id="recipe-unavailable" className="not-valid">Unavailable</h5> : <h5>=</h5>}
             <div id="recipe-list">
               {this.state.activateRecipe === false ?
-              <img  className="splash-logo" src="/assets/cocktail-logo.png" alt="recipe-splash" id="recipe-splash"/>:
+              <img  className="splash-logo" src="/assets/cocktail-logo.png" alt="recipe-splash" id="recipe-logo"/>:
               <Recipes activate={this.state.activateRecipe} details={this.state.ibaRecipe} />}
             </div>
           </section>

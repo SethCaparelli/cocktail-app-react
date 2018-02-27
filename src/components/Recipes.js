@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 
-class Recipe extends Component {
+class Recipe extends Component { 
     render() {
         return (
             <div id="recipe">
-                <h3>{this.props.details.name}=></h3>
                 <h4>Glassware</h4>
                 <p>{this.props.details.glass}</p>
-                <h4>Type</h4>
-                <p>{this.props.details.category}</p>
                 <h4>Ingredients</h4>
                 <ul id="ingredients-list">
                     {this.props.details.ingredients.map((ingredient, i) => {
@@ -16,7 +13,7 @@ class Recipe extends Component {
                             return <li key={i}>{ingredient.special}</li>
                         }
                         else if (ingredient.unit === "cl") {
-                            return <li key={i}>{(ingredient.amount * 0.33814).toFixed(2)} oz of {ingredient.ingredient}</li>
+                            return <li key={i}>{(ingredient.amount * 0.4).toFixed(2)} oz of {ingredient.ingredient}</li>
                         }
                         else {
                             return <li key={i}>{ingredient.amount} {ingredient.unit} of {ingredient.ingredient}</li>
@@ -26,7 +23,7 @@ class Recipe extends Component {
                 <h4>Preparation</h4>
                 <p>{this.props.details.preparation}</p>
                 <h4>Garnish</h4>
-                <p>{this.props.details.garnish}</p>
+                {!this.props.details.garnish ? <p>No Garnish</p> : <p>{this.props.details.garnish}</p>}
             </div>
         )
     }

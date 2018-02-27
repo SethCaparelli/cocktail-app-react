@@ -116,10 +116,15 @@ table {
  #splash button {
   width: 150px;
   height: 75px;
+  box-shadow: 4px 4px 20px grey;
 }
 
 #get-recipe-button {
   height: 30px;
+}
+
+#splash button:hover {
+  background-color: green
 }
 
  button:hover, .submit:hover {
@@ -194,6 +199,7 @@ table {
    display: flex;
    flex-direction: column;
    align-items: center;
+  justify-content: center;
  }
 
  #splash p {
@@ -206,13 +212,13 @@ table {
  }
 
  #cocktail-logo {
-  height: 30%;
-  width: 30%;
+  height: 20%;
+  width: 20%;
  }
 
  #body {
    display: grid;
-   grid-template-rows: 1fr 8fr 1fr;
+   grid-template-rows: 1fr 9fr 1fr;
  }
 
 #main {
@@ -239,10 +245,15 @@ table {
 
 .box-header {
   display: flex;
-  width: 100%;
+  width: 70%;
   justify-content: space-around;
   grid-column: 1/5;
   grid-row: 1/2;
+}
+
+#search-form input[type="text"] {
+  margin-bottom: 5%;
+  box-shadow: 4px 4px 20px grey
 }
 
 #search-form {
@@ -271,11 +282,16 @@ footer {
 .drink {
   display: flex;
   flex-direction: column;
-  margin-right: 5%;
+  margin: 5%;
+}
+
+.drink h3 {
+  margin-top: 0;
 }
 
 .drink-img {
   display: flex;
+  box-shadow: 4px 4px 20px grey;
   width: 270px;
 }
 
@@ -293,6 +309,7 @@ footer {
 #recipe {
   display: flex;
   flex-direction: column;
+  margin: 4%;
 }
 
 #ingredients-list {

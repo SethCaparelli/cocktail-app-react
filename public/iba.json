@@ -153,7 +153,7 @@
       ],
       "garnish": "Pineapple slice and a cherry",
       "preparation": "Pour all ingredients, except the bitters, into shaker filled with ice. Shake. Pour into large glass, filled with ice. Add Angostura bitters, “on top”." },
-    { "name": "Sea Breeze",
+    { "name": "Sea breeze",
       "glass": "highball",
       "category": "Longdrink",
       "ingredients": [
@@ -324,7 +324,7 @@
       ],
       "garnish": "Cherry",
       "preparation": "Stir in mixing glass with ice cubes. Strain into chilled cocktail glass." },
-    { "name": "Porto Flip",
+    { "name": "Porto flip",
       "glass": "martini",
       "category": "After Dinner Cocktail",
       "ingredients": [
@@ -453,7 +453,10 @@
           "label": "Maraschino" },
         { "unit": "cl",
           "amount": 1.5,
-          "ingredient": "Lemon juice" }
+          "ingredient": "Lemon juice"},
+          {"unit": "oz",
+          "amount": 0.25,
+          "ingredient": "Creme de Violet"}
       ],
       "preparation": "Shake and strain into a chilled cocktail glass." },
     { "name": "Bellini",
@@ -532,7 +535,7 @@
       ],
       "garnish": "Lemon twist",
       "preparation": "Build into old-fashioned glass filled with ice. Stir gently." },
-    { "name": "B52",
+    { "name": "B-52",
       "glass": "shot",
       "category": "After Dinner",
       "ingredients": [
@@ -581,7 +584,7 @@
           "ingredient": "Cream" }
       ],
       "preparation": "Shake with ice cubes. Strain into chilled cocktail glass." },
-    { "name": "God Mother",
+    { "name": "Godmother",
       "glass": "old-fashioned",
       "ingredients": [
         { "unit": "cl",
@@ -998,8 +1001,8 @@
           "amount": 1,
           "ingredient": "Vermouth",
           "label": "Dry vermouth" },
-        { "unit": "cl",
-          "amount": 1,
+        { "unit": "oz",
+          "amount": 0.5,
           "ingredient": "Olive juice" }
       ],
       "garnish": "Green olive",
@@ -1058,7 +1061,7 @@
           "ingredient": "Lime juice" }
       ],
       "preparation": "Shake with ice cubes. Strain into a double cocktail glass." },
-    { "name": "Dark 'n' Stormy",
+    { "name": "Dark and Stormy",
       "glass": "highball",
       "category": "Longdrink",
       "ingredients": [
