@@ -47,7 +47,6 @@ class Cocktail extends Component {
         })
       }
       else if(drinks.drinks.length > 1) {
-        console.log(drinks.drinks.length)
         this.setState({
           drinks,
           ibaRecipe: [],
@@ -91,7 +90,6 @@ class Cocktail extends Component {
           })
         }
         if(drinks.drinks.length > 1) {
-          console.log(drinks.drinks.length)
           this.setState({
             drinks,
             ibaRecipe: [],
@@ -119,7 +117,6 @@ class Cocktail extends Component {
   }
 
   getRecipe(drinkName) {
-    console.log("doing something")
     fetch("/iba.json")
     .then(response => {
       return response.json()
