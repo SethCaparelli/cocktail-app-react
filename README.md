@@ -7,4 +7,4 @@ Otherwise, this app is best used to expand one's cocktail knowledge or to easily
 Cheers!
 
 ## Link
-[here](cocktail.surge.sh)
+[here](http://cocktail.surge.sh)
