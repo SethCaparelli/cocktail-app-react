@@ -10,7 +10,7 @@ class Splash extends Component {
                     <Header />
                 </header>
                 <div id="splash">
-                    <img src="/assets/cocktail-logo.png" alt="cocktail-logo" id="cocktail-logo"/>
+                    <img src="/assets/cocktail-logo.png" alt="cocktail-logo" className="splash-logo" id="cocktail-logo"/>
                     <p>
                         This app is designed to quickly find a cocktail based off an input of name, ingredient, or random.
                         It pulls information from an open source cocktail database and connects it to an International Bartender Association(IBA) recipe database.

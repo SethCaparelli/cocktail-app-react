@@ -1,7 +1,4 @@
- /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* meta styles */
 
 html, body, div, span, applet, object, iframe,blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -11,8 +8,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -22,301 +19,309 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
+    margin: 0;
+    font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #373a3c;
+    text-align: left;
+    background-color: #fff;
+    height: 100%;
 }
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
+}
+
 ol, ul {
 	list-style: none;
 }
+
 blockquote, q {
 	quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
 	content: none;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
+:root {
+  --blue: #2780E3;
+  --indigo: #6610f2;
+  --purple: #613d7c;
+  --pink: #e83e8c;
+  --red: #FF0039;
+  --orange: #f0ad4e;
+  --yellow: #FF7518;
+  --green: #3FB618;
+  --teal: #20c997;
+  --cyan: #9954BB;
+  --white: #fff;
+  --gray: #868e96;
+  --gray-dark: #373a3c;
+  --primary: #2780E3;
+  --secondary: #373a3c;
+  --success: #3FB618;
+  --info: #9954BB;
+  --warning: #FF7518;
+  --danger: #FF0039;
+  --light: #f8f9fa;
+  --dark: #373a3c;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
+  --font-family-monospace: SFMono-Regar, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
- @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
- :root {
-   --blue: #2780E3;
-   --indigo: #6610f2;
-   --purple: #613d7c;
-   --pink: #e83e8c;
-   --red: #FF0039;
-   --orange: #f0ad4e;
-   --yellow: #FF7518;
-   --green: #3FB618;
-   --teal: #20c997;
-   --cyan: #9954BB;
-   --white: #fff;
-   --gray: #868e96;
-   --gray-dark: #373a3c;
-   --primary: #2780E3;
-   --secondary: #373a3c;
-   --success: #3FB618;
-   --info: #9954BB;
-   --warning: #FF7518;
-   --danger: #FF0039;
-   --light: #f8f9fa;
-   --dark: #373a3c;
-   --breakpoint-xs: 0;
-   --breakpoint-sm: 576px;
-   --breakpoint-md: 768px;
-   --breakpoint-lg: 992px;
-   --breakpoint-xl: 1200px;
-   --font-family-sans-serif: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-   --font-family-monospace: SFMono-Regar, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
- }
+html {
+    font-family: sans-serif;
+    height: 100%;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+}
 
+input,
+select,
+optgroup,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
 
- html {
-   font-family: sans-serif;
-   line-height: 1.15;
-   -webkit-text-size-adjust: 100%;
-   -ms-text-size-adjust: 100%;
-   -ms-overflow-style: scrollbar;
-   -webkit-tap-highlight-color: transparent;
- }
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: inherit;
+  margin-bottom: 0.5%;
+  font-weight: 375;
+  line-height: 1.2;
+  color: inherit;
+}
 
- body {
-   margin: 0;
-   font-family: "Segoe UI", "Source Sans Pro", Calibri, Candara, Arial, sans-serif;
-   font-size: 0.9375rem;
-   font-weight: 400;
-   line-height: 1.5;
-   color: #373a3c;
-   text-align: left;
-   background-color: #fff;
- }
+h1, .h1 {
+  font-size: 2.34375rem;
+}
 
- b,
- strong {
-   font-weight: bolder;
- }
+h2, .h2 {
+  font-size: 1.875rem;
+}
 
- small {
-   font-size: 80%;
- }
+h3, .h3 {
+  font-size: 1.640625rem;
+}
 
- button, .submit {
+h4, .h4 {
+  font-size: 1.40625rem;
+  margin-top: 5%;
+}
+
+h5, .h5 {
+  font-size: 1.171875rem;
+}
+
+h6, .h6 {
+  font-size: 0.9375rem;
+}
+
+p {
+  margin: 0;
+}
+
+  /* buttons */
+
+button, .submit {
     border-radius: 10px;
     height: 30px;
- }
+}
 
- #splash button {
-  width: 150px;
-  height: 75px;
-  box-shadow: 4px 4px 20px grey;
+#splash button {
+    width: 150px;
+    height: 75px;
+    box-shadow: 4px 4px 20px grey;
 }
 
 #get-recipe-button {
-  height: 30px;
+    height: 30px;
 }
 
 #splash button:hover {
-  background-color: green
+    background-color: green
 }
 
- button:hover, .submit:hover {
-   background-color:  #373a3c;
-   color: white;
-   outline: none;
- }
+button:hover, .submit:hover {
+    background-color:  #373a3c;
+    color: white;
+    outline: none;
+}
 
- button:focus, input:focus {
-   outline:0;
-  }
+button:focus, input:focus {
+    outline:0;
+}
 
- input,
- select,
- optgroup,
- textarea {
-   margin: 0;
-   font-family: inherit;
-   font-size: inherit;
-   line-height: inherit;
- }
+/* splash */
 
- h1, h2, h3, h4, h5, h6,
- .h1, .h2, .h3, .h4, .h5, .h6 {
-   font-family: inherit;
-   margin-bottom: 0.5%;
-   font-weight: 375;
-   line-height: 1.2;
-   color: inherit;
- }
+#splash-body {
+    display: grid;
+    grid-template-rows: 1fr 9fr 1fr;
+}
 
- h1, .h1 {
-   font-size: 2.34375rem;
- }
+#splash-header {
+    display: flex;
+    justify-content: center;
+}
 
- h2, .h2 {
-   font-size: 1.875rem;
- }
+#splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
- h3, .h3 {
-   font-size: 1.640625rem;
- }
+#splash p {
+    margin: 3% 5%;
+}
 
- h4, .h4 {
-   font-size: 1.40625rem;
-   margin-top: 5%;
- }
+/* image styles */
 
- h5, .h5 {
-   font-size: 1.171875rem;
- }
+.drink-img {
+    display: flex;
+    box-shadow: 4px 4px 20px grey;
+    width: 270px;
+}
 
- h6, .h6 {
-   font-size: 0.9375rem;
- }
+.splash-logo {
+    height: 60%;
+    width: 60%;
+}
 
- p {
-   margin: 0;
- }
+#cocktail-logo {
+    height: 300px;
+    width: 300px;
+}
 
- #splash-body {
-   display: grid;
-   grid-template-rows: 1fr 5fr 1fr;
- }
+/* main page styles */
 
- #splash-header {
-   display: flex;
-   justify-content: center;
- }
-
- #splash {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-  justify-content: center;
- }
-
- #splash p {
-   margin: 3% 5%;
- }
-
- .splash-logo {
-   height: 60%;
-   width: 60%;
- }
-
- #cocktail-logo {
-  height: 20%;
-  width: 20%;
- }
-
- #body {
-   display: grid;
-   grid-template-rows: 1fr 9fr 1fr;
- }
+#body {
+    display: grid;
+    grid-template-rows: 1fr 9fr 1fr;
+}
 
 #main {
-  display: flex;
-  flex-wrap: wrap;
-  grid-row: 2/3;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row: 2/3;
 }
 
 #drink-box {
-  grid-column: 1/2;
+    grid-column: 1/2;
 }
 
 #recipe-box {
-  grid-column: 2/3;
+    grid-column: 2/3;
 }
 
 .box {
-  display: flex;
-  flex: 1 0 20%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+    display: flex;
+    flex: 1 0 20%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .box-header {
-  display: flex;
-  width: 70%;
-  justify-content: space-around;
-  grid-column: 1/5;
-  grid-row: 1/2;
-}
-
-#search-form input[type="text"] {
-  margin-bottom: 5%;
-  box-shadow: 4px 4px 20px grey
-}
-
-#search-form {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    grid-column: 1/5;
+    grid-row: 1/2;
 }
 
 #drink-list, #recipe-list {
-  display: flex;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  justify-content: center;
-  align-items: center;
-  overflow: scroll;
-  height: 475px;
-  width: 474px;
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    height: 475px;
+    width: 474px;
 }
 
 .drink {
-  display: flex;
-  flex-direction: column;
-  margin: 5%;
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
 }
 
 .drink h3 {
-  margin-top: 0;
+    margin-top: 0;
 }
 
-.drink-img {
-  display: flex;
-  box-shadow: 4px 4px 20px grey;
-  width: 270px;
-}
-
- #drink-list-expand {
-  display: flex;
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: scroll;
-  height: 475px;
-  width: 474px;
+#drink-list-expand {
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+    height: 475px;
+    width: 474px;
 }
 
 #recipe {
-  display: flex;
-  flex-direction: column;
-  margin: 4%;
+    display: flex;
+    flex-direction: column;
+    margin: 4%;
 }
 
 #ingredients-list {
-  list-style-type: disc;
-  margin-left: 10%;
+    list-style-type: disc;
+    margin-left: 10%;
 }
 
 #main-header {
-  margin-left: 3%;
+    margin-left: 3%;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* search-form styles */
+
+#search-form input[type="text"] {
+    margin-bottom: 5%;
+    box-shadow: 4px 4px 20px grey
+}
+
+#search-form {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
