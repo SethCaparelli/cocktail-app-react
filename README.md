@@ -1,4 +1,8 @@
-# Purpose
+# Cocktail=>
+
+![GIF](./cocktail.gif)
+
+## Purpose
 This app is designed to quickly find a cocktail based off an input of name, ingredient, or just choose randomly.
 It pulls information from an open source cocktail database and connects it to an International Bartender Association(IBA) recipe database.
 It is important to note that many of the cocktail results will not have an associated IBA recipe. Some of the searched cocktails are non-alcoholic,
@@ -6,5 +10,11 @@ and others are not recognized as IBA official cocktails. A future addition to th
 Otherwise, this app is best used to expand one's cocktail knowledge or to easily explore the vast world of libations.
 Cheers!
 
+## Installation
+To install, clone repo and run "npm install" then "npm start"
+
 ## Link
-[here](http://cocktail.surge.sh)
+View live site [here](http://cocktail.surge.sh)
+
+## License
+2018 Seth Caparelli
